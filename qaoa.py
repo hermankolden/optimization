@@ -465,7 +465,7 @@ def createCircuit_MaxKCut(k_cuts,params,G,depth,version=1, applyX=[], usebarrier
                 for k in range(k_bits):
                     circ.cx(I+k,J+k)
                     circ.x(J+k)
-                circ.crz(-gamma*2,J+k_bits-2,J+k_bits-1)
+                circ.cu3(0,gamma,0,J+k_bits-2,J+k_bits-1)
                 for k in reversed(range(k_bits)):
                     circ.x(J+k)
                     circ.cx(I+k,J+k)
